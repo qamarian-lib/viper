@@ -15,7 +15,7 @@ import (
 // To put in simpler terms, the value of argument 1 should be a valid argument for method
 // someViper.SetConfigPath (), as this argument would be passed to the method.
 //
-// Also, the value argument 0 could be either a relative path or an absolute path. Bare
+// Also, the value argument 0 could either be a relative path or an absolute path. Bare
 // file names are not allowd. To use just a file name, do something like this
 // "./filename.ext", and not "filename.ext".
 //
