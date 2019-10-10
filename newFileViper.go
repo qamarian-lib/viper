@@ -8,22 +8,21 @@ import (
       	"strings"
 )
 
-// NewFileViper () is a simple interface for creating file vipers. Argument 0 should be
-// the path of the file, while argument 1 should be a file format supported by viper
-// (github.com/spf13/viper).
+// NewFileViper () is a simple interface for creating file-based vipers.
 //
-// To put in simpler terms, the value of argument 1 should be a valid argument for method
-// someViper.SetConfigPath (), as this argument would be passed to the method.
+// The first parametre of this function should be the path of the file. Relative and
+// absolute paths are supported.
 //
-// Also, the value argument 0 could either be a relative path or an absolute path. Bare
-// file names are not allowd. To use just a file name, do something like this
-// "./filename.ext", and not "filename.ext".
+// This second parametre should be a file format supported by viper
+// (github.com/spf13/viper). To put in simpler terms, this value must be a valid parametre
+// for method someViper.SetConfigType (), as this parametre would be passed to the method.
 //
-// Method someViper.ReadInConfig () do not need to be called on vipers created by this
-// function, as the method would have already been called by the function.
+// Method someViper.ReadInConfig () is not called by this function, so you would have to
+// do it yourself.
 //
 // 	v1, err1 := viper.NewFileViper ("../someDir/file.ext", "json")
 // 	v2, err2 := viper.NewFileViper ("/etc/file", "yaml")
+// 	v3, err3 := viper.NewFileViper ("file.ext", "yaml")
 //
 func NewFileViper (filePath string, format string) (*viper.Viper, error) {
         // Extracting the name (without extension) and the directory of the file. ..1.. {

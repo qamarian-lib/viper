@@ -16,9 +16,11 @@ func TestNewFileViper (t *testing.T) {
 		t.FailNow ()
 	}
 
+	// | --
 	if pwd == "/" {
 		pwd = ""
 	}
+	// -- |
 
 	vY, errY := NewFileViper (pwd + "/" + confFileName, "yaml")
 	if vY == nil || errY != nil {
@@ -35,10 +37,10 @@ func TestNewFileViper (t *testing.T) {
 	}
 	// ..1.. }
 
-	// Testing if fuction works with local paths. ..1.. {
-	vB, errB := NewFileViper ("./" + confFileName, "yaml")
+	// Testing if function works with bare file names. ..1.. {
+	vB, errB := NewFileViper (confFileName, "yaml")
 	if vB == nil || errB != nil {
-		str.PrintEtr ("Test failed! Ref: 4", "err", "TestNewFileViper ()")
+		str.PrintEtr ("Test failed! Ref: 3", "err", "TestNewFileViper ()")
 		t.FailNow ()
 	}
 	// ..1.. }
@@ -47,5 +49,5 @@ func TestNewFileViper (t *testing.T) {
 }
 
 var (
-	confFileName string = "/newFileViper_test_confFile.yml"
+	confFileName string = "newFileViper_test_confFile.yml"
 )
