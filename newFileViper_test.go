@@ -47,7 +47,6 @@ func TestNewFileViper (t *testing.T) {
 
 	str.PrintEtr ("Test passed!", "std", "TestNewFileViper ()")
 }
-
 var (
 	confFileName string = "newFileViper_test_confFile.yml"
 )

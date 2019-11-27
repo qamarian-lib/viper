@@ -1,11 +1,11 @@
 package viper
 
 import (
-	"gopkg.in/qamarian-dtp/err.v0" //v0.4.0
-	"gopkg.in/spf13/viper.v1"
-        "path"
-        "path/filepath"
-      	"strings"
+    "github.com/qamarian-dtp/err"
+    "github.com/spf13/viper"
+    "path"
+    "path/filepath"
+    "strings"
 )
 
 // NewFileViper () is a simple interface for creating file-based vipers.
